@@ -18,6 +18,6 @@ public class Vuelo {
         this.destino = dest;
         this.hSalida = hsal;
         this.hLlegada = hlleg;
-
+        this.asiento = new String[10];
     }
 }
