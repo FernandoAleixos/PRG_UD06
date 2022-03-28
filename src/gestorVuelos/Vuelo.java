@@ -53,15 +53,45 @@ public class Vuelo {
         return identificador != null ? identificador.equals(vuelo.identificador) : vuelo.identificador == null;
     }
 
+    //Si el vuelo ya está completo se lanza una excepción. Si
+    //no está completo, se reserva al pasajero pas el primer asiento libre en pref . El
+    //carácter pref será ' P ' o ' V ' en función de que el pasajero desee un asiento de
+    //pasillo o de ventanilla. En caso de que no quede ningún asiento libre en la
+    //preferencia indicada ( pref ), se reservará el primer asiento libre de la otra
+    //preferencia. El método devolverá el número de asiento que se le ha reservado.
     public int reservarAsiento(String pas, char pref) throws VueloCompletoException{
         if (hayLibres()) {
+            if (asientoLibre(pref) != 0) {
+                asiento[asientoLibre(pref)] = pas;
+                return asientoLibre(pref);
+            } else {
 
+                return asientoLibre(pref);
+            }
         } else {
             throw new VueloCompletoException();
         }
-        return ;
     }
 
+    public int asientoLibre(char pref) {
+        if (hayLibres()) {
+            int contadorInicial = 0;
+            if (pref == 'V') {
+                contadorInicial = 1;
+            } else if (pref == 'P') {
+                contadorInicial = 2;
+            }
+
+            for (int i = contadorInicial; i < asiento.length; i += 2) {
+                if (asiento[i] == null) {
+                    return i;
+                }
+            }
+            return 0;
+        } else {
+            return 0;
+        }
+    }
     private class VueloCompletoException extends Exception {
     }
 }
