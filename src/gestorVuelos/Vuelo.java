@@ -1,6 +1,7 @@
 package gestorVuelos;
 
 import java.time.LocalTime;
+import java.util.Arrays;
 
 public class Vuelo {
 
@@ -73,7 +74,7 @@ public class Vuelo {
         }
     }
 
-    public int asientoLibre(char pref) {
+    private int asientoLibre(char pref) {
         if (hayLibres()) {
             int contadorInicial = 0;
             if (pref == 'V') {
@@ -84,6 +85,7 @@ public class Vuelo {
 
             for (int i = contadorInicial; i < asiento.length; i += 2) {
                 if (asiento[i] == null) {
+                    numP--;
                     return i;
                 }
             }
@@ -93,5 +95,27 @@ public class Vuelo {
         }
     }
     private class VueloCompletoException extends Exception {
+    }
+
+    public void cancelarReserva(int numasiento) {
+        if (numasiento > 0 && numasiento < asiento.length) {
+            if (asiento[numasiento] != null) {
+                asiento[numasiento] = null;
+                numP--;
+                for (int i = numP; i < asiento.length - 1; i++) {
+                    asiento[i] = asiento[i + 1];
+                }
+            } else {
+                System.out.println("No hay ninguna reserva en este sitio.");
+            }
+        } else {
+            System.out.println("El asiento introducido no es valido.");
+        }
+
+    }
+
+    @Override
+    public String toString() {
+        return ;
     }
 }
