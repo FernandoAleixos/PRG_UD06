@@ -12,13 +12,16 @@ public class EscribirFichero1 {
         //escriba los caracteres de tu nombre en un fichero ( nombre.txt ).
         try (DataOutputStream archivo = new DataOutputStream(
                 new BufferedOutputStream(
-                        new FileOutputStream("./nombre.txt")));) {
+                        new FileOutputStream("src/Actividades/nombre.txt")));) {
+
+            System.out.println("Introduce tu nombre: ");
+            String nombre = tec.nextLine();
+            archivo.writeUTF(nombre);
 
         } catch (FileNotFoundException e) {
-
+            System.out.println("Problema al abrir el fichero.");
         } catch (IOException e) {
-
+            System.out.println("Problema al leer o escribir.");
         }
     }
-
 }
