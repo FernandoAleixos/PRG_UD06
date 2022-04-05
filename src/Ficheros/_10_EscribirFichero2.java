@@ -1,4 +1,4 @@
-package Actividades;
+package Ficheros;
 
 import java.io.*;
 import java.util.Scanner;
@@ -8,7 +8,7 @@ public class _10_EscribirFichero2 {
     public static void main(String[] args) {
         Scanner tec = new Scanner(System.in);
 
-        try (FileWriter escribir = new FileWriter(new File("src/Actividades/Actividaes.ficheros/texto.txt"));) {
+        try (FileWriter escribir = new FileWriter(new File("src/Ficheros/ficheros/texto.txt"));) {
             System.out.println("Introduce tu nombre: ");
             String nombre = tec.nextLine();
             escribir.write(nombre);

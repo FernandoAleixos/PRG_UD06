@@ -1,4 +1,4 @@
-package Actividades;
+package Ficheros;
 
 import java.io.*;
 import java.util.Scanner;
@@ -12,7 +12,7 @@ public class _9_EscribirFichero1 {
         //escriba los caracteres de tu nombre en un fichero ( nombre.txt ).
         try (DataOutputStream archivo = new DataOutputStream(
                 new BufferedOutputStream(
-                        new FileOutputStream("src/Actividades/Actividaes.ficheros/nombre.txt")));) {
+                        new FileOutputStream("src/Ficheros/ficheros/nombre.txt")));) {
 
             System.out.println("Introduce tu nombre: ");
             String nombre = tec.nextLine();

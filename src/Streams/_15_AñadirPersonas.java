@@ -1,4 +1,4 @@
-package Actividades;
+package Streams;
 
 import java.io.*;
 import java.util.Scanner;
