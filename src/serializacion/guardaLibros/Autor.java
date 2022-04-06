@@ -1,4 +1,4 @@
-package Serializacion.guardaLibros;
+package serializacion.guardaLibros;
 
 import java.io.Serializable;
 

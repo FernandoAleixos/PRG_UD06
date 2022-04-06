@@ -1,4 +1,4 @@
-package Serializacion.guardaLibros;
+package serializacion.guardaLibros;
 
 // Escribe un programa (GuardaLibros) que cree tres libros y los almacene en el
 // fichero biblioteca.obj .
@@ -19,7 +19,6 @@ public class GuardaLibros implements Serializable{
             salida.writeObject(libro1);
             salida.writeObject(libro2);
             salida.writeObject(libro3);
-            salida.close();
 
             System.out.println("Se han añadido los libros correctamente.");
         } catch (FileNotFoundException e) {

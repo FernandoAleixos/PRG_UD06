@@ -1,7 +1,6 @@
-package Serializacion.LeerLibros;
+package serializacion.LeerLibros;
 
-import Serializacion.guardaLibros.Libro;
-
+import serializacion.guardaLibros.Libro;
 import java.io.*;
 
 public class LeerLibros{
@@ -16,7 +15,6 @@ public class LeerLibros{
                 System.out.println(l2);
                 Libro l3 = (Libro) leer.readObject();
                 System.out.println(l3);
-                leer.close();
 
         } catch (IOException | ClassNotFoundException e) {
             throw new RuntimeException(e);
