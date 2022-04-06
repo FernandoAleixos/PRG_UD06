@@ -1,0 +1,14 @@
+IB101
+Valencia
+Paris
+9
+15
+11
+30
+IB102
+Madrid
+Barcelona
+6
+10
+7
+30
