@@ -41,6 +41,5 @@ public class _23_Lionel {
 
         quitarExtension(docRename2);
         quitarExtension(docRename3);
-
     }
 }
