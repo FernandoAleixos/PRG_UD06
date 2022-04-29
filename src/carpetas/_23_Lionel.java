@@ -9,11 +9,11 @@ import java.util.Scanner;
 // Por ejemplo, astronauta.jpg pasará a llamarse astronauta
 public class _23_Lionel {
 
-    public static  void quitarExtension(File ruta) {
-        File[] listaFicheros = ruta.listFiles() ;
+    public static void quitarExtension(File ruta) {
+        File[] listaFicheros = ruta.listFiles();
 
         for (File f : listaFicheros) {
-            String[] nombres = f.getName().split(".");
+            String[] nombres = f.getName().split("\\.");
             f.renameTo(new File(f.getParent() + "/" + nombres[0]));
         }
     }

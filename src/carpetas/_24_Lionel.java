@@ -8,27 +8,35 @@ import java.io.File;
 public class _24_Lionel {
 
     public static void crearCarpetas(File ruta) {
-        System.out.println("Carpeta: " + ruta.mkdir() + " creada.");
+        if (ruta.mkdir()) {
+            System.out.println("Se ha creado la carpeta correctamente.");
+        } else {
+            System.out.println("No se ha podido crear la carpeta.");
+        }
     }
 
     public static void moverCarpetas(File carpeta, String destino) {
-        carpeta.getAbsolutePath();
-        carpeta.renameTo(new File(destino));
         if (carpeta.renameTo(new File(destino))) {
-            System.out.println("Se ha movido la carpeta indicada.");
+            System.out.println("Se ha movido la carpeta correctamente.");
         } else {
             System.out.println("Ha habido un error.");
         }
-
     }
+
+    /*public static void alfabeto(File ruta) {
+        for (int i = 'A'; i <= 'Z'; i++) {
+            File
+        }
+
+    }*/
 
     public static void main(String[] args) {
         File misCosas = new File("src/carpetas/DOCS/MisCosas");
         File alfabeto = new File("src/carpetas/DOCS/Alfabeto");
 
-        //crearCarpetas(misCosas);
-        //crearCarpetas(alfabeto);
-        moverCarpetas(misCosas, "src/MisCosas/");
-        moverCarpetas(alfabeto, "src/Alfabeto/");
+        crearCarpetas(misCosas);
+        crearCarpetas(alfabeto);
+        moverCarpetas(misCosas, "src/MisCosas");
+        moverCarpetas(alfabeto, "src/Alfabeto");
     }
 }

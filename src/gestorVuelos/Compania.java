@@ -1,6 +1,8 @@
 package gestorVuelos;
 
 import java.io.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class Compania {
 
@@ -35,12 +37,27 @@ public class Compania {
         try (BufferedReader salida = new BufferedReader(
                 new FileReader("src/gestorVuelos/" + this.nombre + ".txt"))) {
 
-
-            while (salida.readLine()) {
-
+            while (salida.read() != -1) {
+                int i = 0;
+                String codigo = salida.readLine();
+                String origen = salida.readLine();
+                String destino = salida.readLine();
+                LocalTime horaSalida = LocalTime.parse(salida.readLine());
+                LocalTime minSalida = LocalTime.parse(salida.readLine());
+                LocalTime horaLlegada = LocalTime.parse(salida.readLine());
+                LocalTime minLlegada = LocalTime.parse(salida.readLine());
+                listaVuelos[i] = new Vuelo(codigo, origen, destino, horaSalida, horaLlegada);
+                i++;
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public Vuelo buscarVuelo(String id) throws ElementoNoEncontrado{
+        
+    }
+
+    private class ElementoNoEncontrado extends Exception {
     }
 }

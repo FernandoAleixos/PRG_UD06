@@ -111,8 +111,5 @@ public class Vuelo {
         } else {
             System.out.println("El asiento introducido no es valido.");
         }
-
     }
-
-
 }
