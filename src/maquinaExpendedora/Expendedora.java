@@ -65,4 +65,14 @@ public class Expendedora {
                 "\nStock: " + stock + " unidades" +
                 "\nRecaudación: " + recaudacion + " euros";
     }
+
+    public void introducirDinero(double importe) {
+        this.credito += importe;
+    }
+
+    public double solicitarDevolucion() {
+        int devolucion = 0;
+
+        return devolucion;
+    }
 }
