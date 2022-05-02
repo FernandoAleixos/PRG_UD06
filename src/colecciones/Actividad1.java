@@ -21,6 +21,7 @@ public class Actividad1 {
         //Mostrar los datos del ArrayList
         misNumeros.toString();
 
+
         //Mostrar el valor de la posición 5
         System.out.println("\n-Mostrar el valor de la posición 5\n" +
                 misNumeros.get(misNumeros.indexOf(5)));
