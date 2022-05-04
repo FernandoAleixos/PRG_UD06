@@ -19,12 +19,11 @@ public class Actividad1 {
         misNumeros.add(5);
 
         //Mostrar los datos del ArrayList
-        misNumeros.toString();
-
+        System.out.println(misNumeros.toString());
 
         //Mostrar el valor de la posición 5
         System.out.print("\n-Mostrar el valor de la posición 5\n" +
-                misNumeros.get(misNumeros.indexOf(5)));
+                misNumeros.get(5));
 
         //Añadir el valor 8 en la posición 4
         System.out.print("\n-Añadir el valor 8 en la posición 4\n");
@@ -63,23 +62,27 @@ public class Actividad1 {
         System.out.print("\n-Comprobar si existe el elemento 0\n");
         if (misNumeros.contains(0)) {
             System.out.println(0);
+        } else {
+            System.out.println("No existe");
         }
 
         //Comprobar si existe el elemento 7
         System.out.print("\n-Comprobar si existe el elemento 7\n");
         if (misNumeros.contains(7)) {
             System.out.println(7);
+        } else {
+            System.out.println("No existe");
         }
 
-        //Clonar el ArrayListmisNumeros en otro llamado copiaArrayList
-        ArrayList <Integer> copiaArrayList = new ArrayList<>();
-        copiaArrayList = (ArrayList<Integer>) misNumeros.clone();
+        //Clonar el ArrayList misNumeros en otro llamado copiaArrayList
+        ArrayList <Integer> copiaArrayList = new ArrayList<>(misNumeros);
+        //copiaArrayList = (ArrayList<Integer>) misNumeros.clone();
 
         //Añadir el elemento 9
         misNumeros.add(9);
 
         //Mostrar la posición de la primera ocurrencia del elemento 9
-        misNumeros.indexOf(9);
+        System.out.println(misNumeros.indexOf(9));
 
         //Mostrar la posición de la última ocurrencia del elemento 9
         System.out.print("\n-Mostrar la posición de la última ocurrencia del elemento 9\n" +
@@ -90,7 +93,7 @@ public class Actividad1 {
         copiaArrayList.clear();
 
         //Comprobar si el ArrayListcopiaArrayList está vacio
-        System.out.print("\n-Comprobar si el ArrayListcopiaArrayList está vacio\n");
+        System.out.print("\n-Comprobar si el ArrayList copiaArrayList está vacio\n");
         if (copiaArrayList.isEmpty()) {
             System.out.println("Vacío");
         } else {
@@ -102,9 +105,8 @@ public class Actividad1 {
         int i = 0;
 
         for (Integer f : array) {
-            array[i] = misNumeros.get(i);
+            array[i++] = f;
             System.out.print(array[i] + ", ");
-            i++;
         }
     }
 }
