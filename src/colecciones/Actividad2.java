@@ -8,14 +8,16 @@
 */
 package colecciones;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Actividad2 {
 
-    final int ALEATORIS = (int) (Math.random() * 55) + 5;
+    final int ALEATORIS = (int) Math.floor((Math.random() * 55) + 5);
 
     public static void main(String[] args) {
-        LinkedList <Integer> colaCine = new LinkedList<>();
+        ArrayList<Integer> colaCine = new ArrayList<>();
+
 
 
     }
